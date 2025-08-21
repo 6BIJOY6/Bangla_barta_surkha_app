@@ -29,21 +29,21 @@
 ---
 
 ## 🧱 Architecture
-
 ```mermaid
 flowchart TD
   A[User] --> UI[Flutter UI]
-  UI --> PERMS[Permission Handler<br/>(SMS and Contacts)]
-  UI --> CONTACTS[flutter_contacts]
-  UI --> SMSBOX[flutter_sms_inbox]
+  UI --> PERMS[Permission Handler SMS and Contacts]
+  UI --> CONTACTS[Flutter Contacts]
+  UI --> SMSBOX[Flutter SMS Inbox]
   SMSBOX --> GROUP[Group by Address]
   CONTACTS --> MAP[Map numbers to contact names]
-  GROUP --> VIEW[Tabs: Approved and Promotional]
-  VIEW --> SWIPE[Swipe to move (persist via Hive)]
+  GROUP --> VIEW[Tabs Approved and Promotional]
+  VIEW --> SWIPE[Swipe to move persist via Hive]
   VIEW --> DETAILS[Message Details Screen]
-  DETAILS -->|Bangla text only| API[HTTP /batch_predict]
-  API --> CACHE[Hive: predictionsMapBox]
+  DETAILS -->|Bangla text only| API[HTTP batch_predict]
+  API --> CACHE[Hive predictionsMapBox]
   CACHE --> DETAILS
-  VIEW --> STATE[Hive: userApprovedAddressesBox]
+  VIEW --> STATE[Hive userApprovedAddressesBox]
 ```
+
 
