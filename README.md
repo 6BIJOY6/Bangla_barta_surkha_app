@@ -33,7 +33,7 @@
 ```mermaid
 flowchart TD
   A[User] --> UI[Flutter UI]
-  UI --> PERMS[Permission Handler\n(SMS + Contacts)]
+  UI --> PERMS[Permission Handler<br>(SMS + Contacts)]
   UI --> CONTACTS[flutter_contacts]
   UI --> SMSBOX[flutter_sms_inbox]
   SMSBOX --> GROUP[Group by Address]
